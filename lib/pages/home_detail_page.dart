@@ -23,16 +23,19 @@ class HomeDetailPage extends StatelessWidget {
           children: [
             "\$${catalog.price}".text.xl4.red800.bold.make(),
             ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(MyTheme.DarkBluishColor),
-                    shape: MaterialStateProperty.all(StadiumBorder())),
-                child: "Buy".text.make()).wh(100, 50)
+                    onPressed: () {},
+                    style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all(MyTheme.DarkBluishColor),
+                        shape: MaterialStateProperty.all(StadiumBorder())),
+                    child: "Add to Cart".text.make())
+                .wh(120, 50)
           ],
-        ).py32(),
+        ).py32().px12(),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       body: SafeArea(
         bottom: false,
@@ -59,6 +62,11 @@ class HomeDetailPage extends StatelessWidget {
                         .xl
                         .make(),
                     10.heightBox,
+                    "Aliquyam dolores stet clita sanctus gubergren dolor amet, lorem sed elitr stet sed et, nonumy et dolor dolor vero duo duo, justo ipsum elitr kasd dolor tempor dolores eos justo dolore. Sed stet magna elitr dolores dolores. Duo at ea accusam et erat ut gubergren. Diam sed sed dolor gubergren."
+                        .text
+                        .textStyle(context.captionStyle!)
+                        .make()
+                        .p16()
                   ],
                 ).py64(),
                 color: Colors.white,
