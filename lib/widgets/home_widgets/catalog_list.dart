@@ -13,9 +13,9 @@ class CatalogList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: CatalogModel.items.length,
+      itemCount: CatalogModel.items!.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.items[index];
+        final catalog = CatalogModel.items![index];
         return InkWell(
             onTap: () => Navigator.push(
                 context,
@@ -33,8 +33,7 @@ class CatalogItem extends StatelessWidget {
   final Item catalog;
 
   const CatalogItem({Key? key, required this.catalog})
-      : assert(catalog != null),
-        super(key: key);
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return VxBox(
@@ -64,7 +63,7 @@ class CatalogItem extends StatelessWidget {
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
                             context.theme.buttonColor),
-                        shape: MaterialStateProperty.all(StadiumBorder())),
+                        shape: MaterialStateProperty.all(const StadiumBorder())),
                     child: "Add to Cart".text.make())
               ],
             ).pOnly(right: 8.0)
