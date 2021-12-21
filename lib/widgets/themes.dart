@@ -10,10 +10,11 @@ class MyTheme {
       buttonColor: DarkBluishColor,
       accentColor: DarkBluishColor,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         color: Colors.white,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.black),
+        titleTextStyle: TextStyle(color: Colors.black)
       ));
 
   static ThemeData get darkTheme => ThemeData(
@@ -24,15 +25,16 @@ class MyTheme {
       buttonColor: LightBluishColor,
       accentColor: Colors.white,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         color: Colors.black,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.white),
+        titleTextStyle: TextStyle(color: Colors.white)
       ));
 
   //Colors
-  static Color creamColor = Color(0xfff5f5f5);
+  static Color creamColor = const Color(0xfff5f5f5);
   static Color DarkCreamColor = Vx.gray900;
-  static Color DarkBluishColor = Color(0xff403b58);
+  static Color DarkBluishColor = const Color(0xff403b58);
   static Color LightBluishColor = Vx.indigo500;
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_application_1/models/catalog.dart';
@@ -9,8 +8,7 @@ class HomeDetailPage extends StatelessWidget {
   const HomeDetailPage({
     Key? key,
     required this.catalog,
-  })  : assert(catalog != null),
-        super(key: key);
+  })  : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,7 @@ class HomeDetailPage extends StatelessWidget {
       bottomNavigationBar: Container(
         color: context.cardColor,
         child: ButtonBar(
-          alignment: MainAxisAlignment.spaceBetween,
+          alignment: MainAxisAlignment.spaceAround,
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${catalog.price}".text.xl4.red800.bold.make(),
@@ -27,11 +25,11 @@ class HomeDetailPage extends StatelessWidget {
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(context.theme.buttonColor),
-                        shape: MaterialStateProperty.all(StadiumBorder())),
+                        shape: MaterialStateProperty.all(const StadiumBorder())),
                     child: "Add to Cart".text.make())
                 .wh(120, 50)
           ],
-        ).py32().px12(),
+        ).py32(),
       ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,

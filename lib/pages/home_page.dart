@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_application_1/models/catalog.dart';
-import 'package:flutter_application_1/widgets/themes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -46,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
         backgroundColor: context.theme.buttonColor,
-        child: Icon(CupertinoIcons.cart,color: Colors.white,),
+        child: const Icon(CupertinoIcons.cart,color: Colors.white,),
       ),
       body: SafeArea(
         child: Container(
@@ -54,11 +53,11 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CatalogHeader(),
-              if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList().py16().expand()
+              const CatalogHeader(),
+              if (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
+                const CatalogList().py16().expand()
               else
-                CircularProgressIndicator().centered().expand(),
+                const CircularProgressIndicator().centered().expand(),
             ],
           ),
         ),
