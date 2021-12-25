@@ -6,12 +6,12 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageurl = "https://www.teahub.io/photos/full/4-45076_kira-light-yagami.jpg";
+    const imageurl = "https://www.teahub.io/photos/full/4-45076_kira-light-yagami.jpg";
     return Drawer(
       child: Container(
         color: Colors.deepPurple,
         child: ListView(
-          children: [
+          children: const [
             DrawerHeader(
                 padding: EdgeInsets.zero,
                 child: UserAccountsDrawerHeader(

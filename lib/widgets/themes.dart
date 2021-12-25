@@ -7,8 +7,8 @@ class MyTheme {
       primarySwatch: Colors.deepPurple,
       cardColor: Colors.white,
       canvasColor: creamColor,
-      buttonColor: DarkBluishColor,
-      accentColor: DarkBluishColor,
+      buttonColor: darkbluishColor,
+      accentColor: darkbluishColor,
       fontFamily: GoogleFonts.poppins().fontFamily,
       appBarTheme: const AppBarTheme(
         color: Colors.white,
@@ -21,8 +21,8 @@ class MyTheme {
     brightness: Brightness.dark,
       primarySwatch: Colors.deepPurple,
       cardColor: Colors.black,
-      canvasColor: DarkCreamColor,
-      buttonColor: LightBluishColor,
+      canvasColor: darkcreamColor,
+      buttonColor: lightbluishColor,
       accentColor: Colors.white,
       fontFamily: GoogleFonts.poppins().fontFamily,
       appBarTheme: const AppBarTheme(
@@ -34,7 +34,7 @@ class MyTheme {
 
   //Colors
   static Color creamColor = const Color(0xfff5f5f5);
-  static Color DarkCreamColor = Vx.gray900;
-  static Color DarkBluishColor = const Color(0xff403b58);
-  static Color LightBluishColor = Vx.indigo500;
+  static Color darkcreamColor = Vx.gray900;
+  static Color darkbluishColor = const Color(0xff403b58);
+  static Color lightbluishColor = Vx.indigo500;
 }
