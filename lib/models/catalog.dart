@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 class CatalogModel {
+
   static List<Item>? items;
 
   //Get Item by ID
