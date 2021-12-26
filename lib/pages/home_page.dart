@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_application_1/core/store.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_application_1/widgets/home_widgets/catalog_list.dart';
@@ -40,12 +42,24 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     return Scaffold(
       backgroundColor: context.cardColor,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        backgroundColor: context.theme.buttonColor,
-        child: const Icon(CupertinoIcons.cart,color: Colors.white,),
+      floatingActionButton: VxBuilder(
+        mutations: {AddMutation, RemoveMutation},
+        builder: (ctx, badge, _) => FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          backgroundColor: context.theme.buttonColor,
+          child: const Icon(
+            CupertinoIcons.cart,
+            color: Colors.white,
+          ),
+        ).badge(
+            color: Vx.red500,
+            size: 22,
+            count: _cart.items.length,
+            textStyle:
+                TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
       ),
       body: SafeArea(
         child: Container(
